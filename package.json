@@ -1,0 +1,23 @@
+{
+  "name": "gaming-sports-platform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "electron": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuadraKOfx/gaming-sports-platform.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuadraKOfx/gaming-sports-platform/issues"
+  },
+  "homepage": "https://github.com/QuadraKOfx/gaming-sports-platform#readme",
+  "dependencies": {
+    "electron": "^13.2.1"
+  }
+}
