@@ -1,0 +1,28 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 6rem;
+
+  &-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+
+    &-left {
+      display: flex;
+    }
+  }
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  bottom: 5rem;
+  width: 300px;
+  margin-left: 2rem;
+  height: 500px;
+  background-color: lightseagreen;
+}
