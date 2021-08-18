@@ -167,7 +167,7 @@ html, body {
     margin-right: 10px;
 }
 
-.items .item .item-status img {
+.items .item .item-status .img {
     width: 48px;
     height: 48px;
     -webkit-border-radius: 50px;
@@ -217,7 +217,7 @@ html, body {
 }
 
 @media (max-width: 767px) {
-    .items .item .item-status img {
+    .items .item .item-status .img {
         width: 30px;
         height: 30px;
     }

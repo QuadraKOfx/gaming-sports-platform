@@ -17,12 +17,17 @@
   }
 }
 
+.wh {
+  width: 100%;
+}
+
 .popup {
   position: fixed;
   left: 0;
   bottom: 5rem;
-  width: 300px;
+  width: 650px;
   margin-left: 2rem;
-  height: 500px;
+  height: 450px;
+  border-radius: 4px;
   background-color: lightseagreen;
 }

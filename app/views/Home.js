@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Navbar from "../components/navbar";
 import FooterComponent from "../components/footer";
 import PopupChat from "../components/popup-chat";
+import Sidebar from "../components/sidebar";
 
 export default function Home() {
     const [popupButton, setPopupMode] = useState();
@@ -11,9 +12,12 @@ export default function Home() {
     }
 
     return (
-        <>
+        <div className="row wh fh">
             {/* NAVBAR STARTS */}
             <Navbar/>
+
+            {/* SIDEBAR STARTS */}
+            <Sidebar/>
 
             {/* CHAT POPUP COMPONENT STARTS */}
             <PopupChat trigger={popupButton}>
@@ -24,6 +28,6 @@ export default function Home() {
 
             {/* FOOTER STARTS */}
             <FooterComponent setChatPopup={handleChatPopup}/>
-        </>
+        </div>
     )
 }

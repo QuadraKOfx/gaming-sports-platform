@@ -6,9 +6,10 @@ const isDev = !app.isPackaged;
 
 function createWindow() {
     const win = new BrowserWindow({
-        width: 1200,
+        width: 1400,
         height: 800,
         show: false,
+        resizable: false,
         webPreferences: {
             nodeIntegration: false,
             worldSafeExecuteJavaScript: true,
