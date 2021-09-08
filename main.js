@@ -1,8 +1,7 @@
 const electron = require('electron');
-const {app, BrowserWindow } = electron;
+const {app, BrowserWindow, autoUpdater } = electron;
 const path = require('path');
 const isDev = !app.isPackaged;
-const {autoUpdater} = require("electron-updater");
 
 function createWindow() {
     const mainWindow = new BrowserWindow({
