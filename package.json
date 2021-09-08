@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "watch": "webpack --config webpack.common.js --watch"
+    "watch": "webpack --config webpack.common.js --watch",
+    "build": "webpack --config webpack.prod.js",
+    "pack": "electron-builder --dir",
+    "make:win": "electron-builder --win --x64",
+    "gh-publish": "electron-builder --win --x64 -p always"
   },
   "repository": {
     "type": "git",
@@ -14,13 +18,62 @@
   },
   "author": "",
   "license": "ISC",
+  "build": {
+    "productName": "Legendary Arena",
+    "appId": "com.quadrako.gamearena",
+    "files": [
+      "build/**/*",
+      "assets/**/*",
+      "utils/**/*",
+      "index.html",
+      "splash.html",
+      "splash.css",
+      "main.js",
+      "preload.js"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "assets/images/react_app_logo.png",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 810,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "icon": "assets/images/react_app_logo.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "AppImage"
+      ],
+      "category": "Development"
+    }
+  },
   "bugs": {
     "url": "https://github.com/QuadraKOfx/gaming-sports-platform/issues"
   },
   "devDependencies": {
     "electron": "^13.2.1",
-    "electron-builder": "^22.8.1",
-    "electron-reload": "^1.5.0"
+    "electron-builder": "^22.11.7",
+    "electron-reload": "^1.5.0",
+    "electron-updater": "^4.3.9"
   },
   "dependencies": {
     "@babel/core": "^7.15.0",
@@ -31,7 +84,6 @@
     "bootstrap": "^5.1.0",
     "bootstrap-icons": "^1.5.0",
     "css-loader": "^4.3.0",
-    "electron": "^13.2.1",
     "firebase": "^7.19.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -44,6 +96,7 @@
     "sass-loader": "^10.2.0",
     "style-loader": "^3.2.1",
     "webpack": "^5.50.0",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0",
+    "webpack-merge": "^5.8.0"
   }
 }

@@ -34,10 +34,8 @@ html, body {
 }
 
 .content-wrapper {
-  height: 100%;
-  background-color: $gray-200;
-  padding-top: 70px;
   transition: background-color 1s;
+  padding-top: 60px;
 
   &.dark {
     background-color: $gray-900;
@@ -63,10 +61,6 @@ html, body {
 
 .app-title {
   padding: 10px 1rem;
-}
-
-.fh {
-  height: 100%;;
 }
 
 .chat-search-box {
@@ -387,22 +381,21 @@ ul {
 
 .chat-navbar {
   position: absolute;
-  padding: 16px;
   top: 0;
-  border-bottom: 1px solid #e6ecf3;
-  width: 100%;
+  min-height: 60px;
+  max-height: 60px;
+  margin-left: 25%;
+  padding: 1rem;
+  max-width: 75%;
+  width: 75%;
 
   &-inner {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-    &-left {
-      display: flex;
-    }
-
     &-right {
-      display: flex;
+      text-align: right;
     }
 
     .logged-in-user {
@@ -413,11 +406,6 @@ ul {
   }
 }
 
-.mr-2 {
-  margin-right: 1rem;
-}
-
-
 /************************************************
 	************************************************
 											Login Form
@@ -425,58 +413,11 @@ ul {
 ************************************************/
 
 .centered-view {
-  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-
-  .centered-container-form {
-    width: 784px;
-    padding: 32px;
-    font-size: 18px;
-    -webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
-    box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
-    border-radius: 5px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .form-container {
-      width: 100%;
-      text-align: left;
-
-      .form-check {
-        display: flex;
-      }
-
-      .form-check-input {
-        margin-top: 0;
-      }
-    }
-
-    .header {
-      font-size: 21px;
-      font-weight: bold;;
-    }
-
-    .subheader {
-      color: $gray-800;
-    }
-
-    label {
-      font-size: 12px;
-      margin-bottom: 5px;
-      color: $gray-700;
-    }
-  }
-
-  @media (max-width: 830px) {
-    .centered-container-form  {
-      max-width: 480px;
-    }
-  }
+  text-align: center;
+  margin: 25% auto;
+  width: 220px;
 }
 
 .loading-screen {

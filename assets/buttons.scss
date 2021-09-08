@@ -1,0 +1,20 @@
+.btn-p {
+  padding: .57rem 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  font-size: .800rem;
+  line-height: 1.45;
+  border-radius: .25rem;
+  background-color: darkgrey;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-p:hover {
+  background-color: red;
+  color: white;
+}

@@ -1,11 +1,11 @@
 const electron = require('electron');
-
 const {app, BrowserWindow } = electron;
 const path = require('path');
 const isDev = !app.isPackaged;
+const {autoUpdater} = require("electron-updater");
 
 function createWindow() {
-    const win = new BrowserWindow({
+    const mainWindow = new BrowserWindow({
         width: 1400,
         height: 800,
         show: false,
@@ -17,9 +17,9 @@ function createWindow() {
             preload: path.join(__dirname, 'preload.js')
         },
     })
-    win.loadFile('index.html').catch();
-    isDev && win.webContents.openDevTools();
-    return win;
+    mainWindow.loadFile('index.html').catch();
+    isDev && mainWindow.webContents.openDevTools();
+    return mainWindow;
 }
 
 if (isDev) {
@@ -33,6 +33,9 @@ app.on('ready', () => {
     mainApp.once('ready-to-show', () => {
         setTimeout(() => {
             mainApp.show();
+
+            autoUpdater.checkForUpdatesAndNotify().then();
+
         }, 2000)
     })
 })
