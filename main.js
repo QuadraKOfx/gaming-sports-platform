@@ -34,7 +34,15 @@ app.on('ready', () => {
         setTimeout(() => {
             mainApp.show();
 
-            autoUpdater.checkForUpdatesAndNotify().then();
+            const server = 'https://github.com/QuadraKOfx/gaming-sports-platform/tree/production';
+            const feed = `${server}/OWNER/REPO/${process.platform}-${process.arch}/${app.getVersion()}`;
+            autoUpdater.setFeedURL(feed)
+
+            setInterval(() => {
+                autoUpdater.checkForUpdates().then( (value) => {
+                    console.log('Just checked for updates', value);
+                })
+            }, 10 * 60 * 1000)
 
         }, 2000)
     })
