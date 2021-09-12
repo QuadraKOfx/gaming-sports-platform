@@ -7,6 +7,9 @@ import Welcome from "../app/views/Welcome";
 import Sidebar from "../app/components/sidebar";
 import PopupChat from "../app/components/popup-chat";
 import Feed from "../app/views/Feed";
+import LoginForm from "../app/components/login-form";
+import Register from "../app/views/Register";
+import Login from "../app/views/Login";
 
 export default function App() {
     const [popupButton, setPopupMode] = useState();
@@ -31,6 +34,12 @@ export default function App() {
                     <Switch>
                         <Route path="/login">
                             <Welcome />
+                        </Route>
+                        <Route path="/login-form">
+                            <Login />
+                        </Route>
+                        <Route path="/register-form">
+                            <Register />
                         </Route>
                         <Route path="/home">
                             <Home />

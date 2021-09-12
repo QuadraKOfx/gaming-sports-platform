@@ -14,7 +14,34 @@
   text-decoration: none;
 }
 
+.btn-login {
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .57rem 1.5rem;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  &.login-p {
+    padding: .782rem 1.5rem;
+    border-radius: .25rem;
+    display: block;
+    width: 100%;
+  }
+}
+
 .btn-p:hover {
   background-color: red;
   color: white;
+  &.google:hover {
+    background-color: lightblue;
+  }
+}
+
+.btn-link {
+  align-items: center;
+  text-decoration: none;
+  text-align: left;
 }

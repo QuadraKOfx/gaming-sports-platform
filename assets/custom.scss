@@ -31,3 +31,24 @@
   border-radius: 4px;
   background-color: lightseagreen;
 }
+
+.login-form {
+  padding: 12% 30%;
+}
+
+.l-input {
+  display: block;
+  width: 100%;
+  height: calc(2.40875rem + 2px);
+  padding: .57rem 1rem;
+  font-size: .875rem;
+  line-height: 1.45;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #dfdfdf;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+

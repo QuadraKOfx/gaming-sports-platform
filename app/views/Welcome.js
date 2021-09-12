@@ -11,8 +11,12 @@ export default function Welcome() {
 
             <div className="row mrt-2">
                 <Link
-                    to="/login"
+                    to="/login-form"
                     className="btn-p">Login</Link>
+            </div>
+            <div className="row mrt-2">
+                <button
+                    className="btn-p">Register</button>
             </div>
 
         </div>
