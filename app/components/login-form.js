@@ -1,13 +1,21 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
+import {useDispatch, useSelector} from 'react-redux';
+import { loginUser } from '../../src/actions/auth';
 
 export default function LoginForm() {
-
     const {register, handleSubmit} = useForm();
+    const user = useSelector(({auth}) => auth.user);
+
+    const dispatch = useDispatch();
 
     const onSubmit = data => {
-        alert(JSON.stringify(data))
+        dispatch(loginUser(data));
+    }
+
+    if (user) {
+        return <Redirect to="/"/>
     }
 
     return (

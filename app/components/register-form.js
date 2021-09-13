@@ -1,17 +1,22 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
-import {useDispatch} from "react-redux";
-import {registerUser} from '../../src/api/auth';
+import {useDispatch, useSelector} from "react-redux";
+import {registerUser} from '../../src/actions/auth';
+import {Redirect} from "react-router-dom";
 
 export default function RegisterForm() {
     const {register, handleSubmit} = useForm();
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const user = useSelector(({auth}) => auth.user);
 
     const onSubmit = data => {
-        console.info(data);
-        // dispatch(registerUser(data)).then(value => {
-        //     console.info(value);
-        // });
+        dispatch(registerUser(data)).then(value => {
+            console.info(value);
+        });
+    }
+
+    if (user) {
+        return <Redirect to="/"/>
     }
 
     return (
@@ -29,7 +34,7 @@ export default function RegisterForm() {
                             id="email"
                             name="email"
                             placeholder="Email"
-                            aria-describedby="emailHelp" />
+                            aria-describedby="emailHelp"/>
                     </div>
 
                     <div className="form-group mrt-2">
@@ -39,12 +44,23 @@ export default function RegisterForm() {
                             name="password"
                             placeholder="Password"
                             className="l-input"
-                            id="password" />
+                            id="password"/>
+                    </div>
+
+                    <div className="form-group mrt-2">
+                        <input
+                            ref={register}
+                            type="username"
+                            name="username"
+                            placeholder="Username"
+                            className="l-input"
+                            id="username"/>
                     </div>
 
                     <button
                         type="submit"
-                        className="btn-login login-p mrt-2">Register</button>
+                        className="btn-login login-p mrt-2">Register
+                    </button>
                 </div>
             </form>
 

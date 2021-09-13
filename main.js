@@ -41,8 +41,8 @@ function createWindow() {
         },
     })
     mainWindow.loadFile('index.html').catch();
-    mainWindow.removeMenu(true)
-    isDev && mainWindow.webContents.openDevTools();
+    // mainWindow.removeMenu(true)
+    // isDev && mainWindow.webContents.openDevTools();
     return mainWindow;
 }
 

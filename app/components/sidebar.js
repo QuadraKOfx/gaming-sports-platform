@@ -1,6 +1,21 @@
 import React from "react";
+import {useSelector} from "react-redux";
 
 export default function Sidebar() {
+    const user = useSelector(({auth}) => auth.user);
+
+    function UserDetails() {
+        if (user) {
+            return <p className="name-time">
+                <span className="name mr-2">{user.username}</span>
+            </p>
+        } else {
+            return <p className="name-time">
+                <span className="name mr-2">username</span>
+            </p>
+        }
+
+    }
 
     return (
         <div className="list-container">
@@ -20,9 +35,7 @@ export default function Sidebar() {
 
                         </div>
                     </div>
-                    <p className="name-time">
-                        <span className="name mr-2">UserName</span>
-                    </p>
+                    <UserDetails/>
                 </li>
                 <li
                     onClick={() => {}}
