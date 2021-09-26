@@ -7,7 +7,7 @@ export const getUserProfile = uid =>
         .collection('profiles')
         .doc(uid)
         .get()
-        .then(snanpshot => snanpshot.data())
+        .then(snapshot => snapshot.data())
 
 const createUserProfile = userProfile =>
     db

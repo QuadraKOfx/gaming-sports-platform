@@ -1,45 +1,41 @@
-import React from "react";
-import { Heart, Star } from 'react-feather';
+import React, {useCallback, useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {openModalPost} from "../../src/actions/posts";
 
 export default function PostsList({posts}) {
 
-    const checkPost = post => {
-        const isConfirming = confirm(`Checking Post... : ${post.title} ?`);
-    }
+    const dispatch = useDispatch();
+
+    const openModal = useCallback(post => {
+        dispatch(openModalPost({post}));
+    });
 
     return (
-        <div className="posts-container">
+        <div className="blog-container">
             {posts.map(post =>
 
-                <div
-                    key={post.id}
-                    className="posts-card mrt-3">
+                <div  key={post.id}
+                      className="blog-post-container">
 
-                    <div className="post-image">
+                <div className="blog-post clickable"
+                     onClick={() => openModal(post)}>
 
-                    </div>
+                        <div className="blog-layout">
 
-                    <div className="post-body">
-                        <div className="pb-info">
-                            <h3>{post.title}</h3>
                         </div>
-                        <div className="sub-title">
+
+                        <div className="blog-info">
+                            <h2>{post.title}</h2>
+                        </div>
+
+                        <div className="blog-info">
                             <h3>{post.description}</h3>
                         </div>
+
                     </div>
-
-                    <div className="post-actions" onClick={() => checkPost(post)}>
-                        <div className="actions">
-                            <Heart />
-                            {/*<button className="btn-p btn-a">Like Post</button>*/}
-
-                            {/*<button className="btn-p btn-a ml-2">Ratings</button>*/}
-                            <Star className="star" />
-                        </div>
-                    </div>
-
-
                 </div>
+
+
             )}
 
         </div>

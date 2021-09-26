@@ -13,6 +13,7 @@ import { Provider } from 'react-redux';
 import configureStore from './store/index';
 const store = configureStore();
 import { listenToAuthChanges } from './actions/auth';
+import ModalPost from "../app/components/modal-post";
 
 
 export default function App() {
@@ -40,7 +41,7 @@ export default function App() {
                         <Sidebar/>
                     </div>
 
-                    <div className='content-wrapper col-9'>
+                    <div className='content-wrapper col-9 mrt-3'>
 
                         <Switch>
                             <Route path="/login">
@@ -54,6 +55,9 @@ export default function App() {
                             </Route>
                             <Route path="/home">
                                 <Home />
+                            </Route>
+                            <Route path="/post-view">
+                                <ModalPost />
                             </Route>
                             <Route path="/" exact>
                                 <Feed />

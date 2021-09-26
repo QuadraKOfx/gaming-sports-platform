@@ -9,6 +9,7 @@ export default function RegisterForm() {
     const dispatch = useDispatch();
     const user = useSelector(({auth}) => auth.user);
 
+
     const onSubmit = data => {
         dispatch(registerUser(data)).then(value => {
             console.info(value);

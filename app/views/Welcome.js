@@ -32,15 +32,40 @@ export default function Welcome() {
 
     function SetUserProfile() {
         if (user) {
-            return <div className="centered-view">
+            return <div className="avatar-section">
                 <div className="row">
-                    <h3>Welcome back {user.username}</h3>
+                    <div className="av-section-container flex">
+                        {/*<h3>Welcome back {user.username}</h3>*/}
+                        <div className="avatar p-avatar"/>
+                        <div className="p-info-container">
+                            <div className="row">
+                                <h2>{user.username}</h2>
+                            </div>
+                            <div className="row">
+                                <button className="btn btn-p">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div className="row">
-                    <button
-                        onClick={() => dispatch(logout())}
-                        className="btn-p">Log out</button>
+                    <div className="s-games-container">
+                        <div className="row">
+                            <h3>Games Playing</h3>
+                        </div>
+                        <div className="row pad-1">
+                            <div className="avatar g-avatar"/>
+                            <div className="avatar g-avatar"/>
+                            <div className="avatar g-avatar"/>
+                        </div>
+                    </div>
                 </div>
+                {/*<div className="row">*/}
+                {/*    <button*/}
+                {/*        onClick={() => dispatch(logout())}*/}
+                {/*        className="btn-p">Log out*/}
+                {/*    </button>*/}
+                {/*</div>*/}
             </div>
         }
     }

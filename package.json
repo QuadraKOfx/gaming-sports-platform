@@ -80,6 +80,7 @@
     "electron-squirrel-startup": "^1.0.0",
     "feather-icons": "^4.28.0",
     "firebase": "^7.24.0",
+    "moment": "^2.29.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.9",

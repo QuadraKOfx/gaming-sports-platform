@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useCallback} from "react";
 import {useSelector} from "react-redux";
+import {Link, Redirect} from "react-router-dom";
 
 export default function Sidebar() {
     const user = useSelector(({auth}) => auth.user);
+
+    const redirectToProfile = useCallback(() => {
+        return <Redirect to="/login"/>;
+    })
 
     function UserDetails() {
         if (user) {
@@ -22,23 +27,24 @@ export default function Sidebar() {
             {/* ########## SEARCH BOX - START ############ */}
             <div className="chat-search-box">
                 <div className="input-group">
-                    <input className="form-control" placeholder="Search" />
+                    <input className="form-control" placeholder="Search"/>
                 </div>
             </div>
             {/* ########## SEARCH BOX - END ############ */}
             <ul className="items">
-                <li
-                    onClick={() => {}}
-                    className="item">
-                    <div className="item-status">
-                        <div className="img">
+                <li className="item">
+                    <Link to="/login" className="remove-link">
+                        <div className="item-status">
+                            <div className="img">
 
+                            </div>
                         </div>
-                    </div>
-                    <UserDetails/>
+                        <UserDetails/>
+                    </Link>
                 </li>
                 <li
-                    onClick={() => {}}
+                    onClick={() => {
+                    }}
                     className="item">
                     <div className="item-status">
                         <div className="img">
@@ -46,7 +52,7 @@ export default function Sidebar() {
                         </div>
                     </div>
                     <p className="name-time">
-                        <span className="name mr-2">Leaderboards</span>
+                        <span className="name mr-2">Settings</span>
                     </p>
                 </li>
             </ul>

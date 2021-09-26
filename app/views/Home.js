@@ -2,9 +2,11 @@ import React from "react";
 
 export default function Home() {
 
-    return (
-        <div>
+    function NewFeedView() {
+        return <div className="news-feed-container"/>
+    }
 
-        </div>
+    return (
+        <NewFeedView />
     )
 }

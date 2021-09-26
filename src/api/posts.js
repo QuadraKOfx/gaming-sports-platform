@@ -9,3 +9,28 @@ export const fetchPosts = () => {
         .get()
         .then(extractSnapshotData)
 }
+
+export const postComment = (comment, postId) =>
+    db
+        .collection('posts')
+        .doc(postId)
+        .collection('comments')
+        .doc(comment.timestamp)
+        .set(comment)
+
+export const deleteComment = (comment, postId) =>
+    db
+        .collection('posts')
+        .doc(postId)
+        .collection('comments')
+        .doc(comment.id)
+        .delete()
+
+export const subscribeToPostComments = (postId, onSubscribe) =>
+    db
+        .collection('posts')
+        .doc(postId)
+        .collection('comments')
+        .onSnapshot(snapshot => onSubscribe(snapshot.docChanges()))
+
+

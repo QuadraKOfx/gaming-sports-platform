@@ -1,74 +1,92 @@
-.posts-card {
-  overflow: hidden;
-  border: .5px;
-  border-radius: 0.5rem;
-  background-color: rgb(255, 255, 255);
-  box-shadow: rgb(0 0 0 / 6%) 0 0 0.125rem 0, rgb(0 0 0 / 12%) 0 0.125rem 0.125rem 0;
+.blog-container {
+  height: 600px;
+  overflow-x: auto;
+  margin-top: 2rem;
 }
 
-.post-image {
-  background-color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.posts-container {
-  padding: 4rem 12rem;
-}
-
-.post-body {
-  justify-content: space-between;;
-  align-items: center;
-  white-space: nowrap;
-  padding: 1rem;
+.blog-layout {
+  flex-direction: column;
   position: relative;
+  flex: 1;
+  max-width: 100%;
+  background-color: #111111;
+  padding: 6rem;
 }
 
-.post-actions {
-  display: flex;
-  align-items: center;
-  height: 2rem;
-  border-top: 0.0625rem dashed rgba(32, 33, 37, 0.12);
-  font-feature-settings: "kern";
-  text-rendering: optimizelegibility;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-style: normal;
-  font-stretch: normal;
-  text-transform: none;
-  font-weight: 400;
-  color: rgba(32, 33, 37, 0.64);
-  padding: 1.5rem 1rem;
-  .actions {
-    white-space: nowrap;
-    display: flex;
-    width: 100%;
-    .star {
-      margin-left: 2rem;
-      cursor: pointer;
-    }
+.blog-post-container {
+  padding: 2rem 14rem;
+}
+
+.blog-post {
+  padding: 10px 10px;
+  border-radius: 4px;
+  border: .5px solid lightgrey;
+  min-height: 250px;
+}
+
+.blog-info {
+  font-weight: 700;
+  margin: 20px 0 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.av-username {
+  padding: 10px;
+}
+
+.chat-left {
+  border: solid 1px lightgray;
+}
+
+.chat-text-wrapper {
+  padding: 15px;
+}
+
+.avatar {
+  vertical-align: middle;
+  border-radius: 50%;
+  background-color: lightblue;
+
+  &.g-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  &.g-avatar:not(:first-child) {
+    margin-left: 1.5rem;
+  }
+
+  &.p-avatar {
+    width: 100px;
+    height: 100px;
+    background-color: lightseagreen;
+  }
+
+  &.av-comment {
+    width: 35px;
+    height: 35px;
+  }
+
+  &.av-post {
+    width: 50px;
+    height: 50px;
   }
 }
 
-.sub-title {
-  font-feature-settings: "kern";
-  text-rendering: optimizelegibility;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-style: normal;
-  font-stretch: normal;
-  text-transform: none;
-  font-weight: 400;
-  color: rgba(32, 33, 37, 0.64);
-  text-align: start;
-  margin: 0.25rem 0px 0px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  min-height: 1.25rem;
+.chat-left:hover {
+  .icon-action {
+    display: block;
+  }
 }
+
+.icon-action {
+  display: none;
+  width: 20px;
+  cursor: pointer;
+  height: 20px;
+  color: red;
+}
+

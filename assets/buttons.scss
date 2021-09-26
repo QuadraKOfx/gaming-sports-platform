@@ -18,6 +18,13 @@
   }
 }
 
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 7rem;
+  cursor: pointer;
+}
+
 .btn-login {
   font-weight: 700;
   text-align: center;
