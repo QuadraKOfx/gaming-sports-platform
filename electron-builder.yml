@@ -1,4 +1,0 @@
-appId: com.quadrako.legendaryPlatform
-publish:
-  provider: github
-  token: [bash-releases]
