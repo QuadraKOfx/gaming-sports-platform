@@ -52,9 +52,6 @@ app.on('ready', () => {
     mainApp.once('ready-to-show', () => {
         setTimeout(() => {
             mainApp.show();
-            if (!isDev) {
-                appUpdater();
-            }
         }, 2000)
     })
 })
