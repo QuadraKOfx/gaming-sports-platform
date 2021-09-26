@@ -1,0 +1,4 @@
+appId: com.quadrako.legendaryPlatform
+publish:
+  provider: github
+  token: [YOUR GITHUB ACCESS TOKEN]
