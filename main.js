@@ -10,6 +10,9 @@ const platform = os.platform() + '_' + os.arch();
 
 const updaterFeedURL = 'https://legendary-platform.herokuapp.com/' + platform + '/' + version;
 
+function isWindowsOrMacOS() {
+    return process.platform === 'darwin' || process.platform === 'win32';
+}
 
 function createWindow() {
     const mainWindow = new BrowserWindow({
@@ -26,6 +29,13 @@ function createWindow() {
         },
     })
     mainWindow.loadFile('index.html').catch();
+
+    const page = mainWindow.webContents;
+    page.once('did-frame-finish-load', () => {
+        const checkOS = isWindowsOrMacOS();
+        if (checkOS && !isDev) {
+            appUpdater();
+        }});
     // mainWindow.removeMenu(true)
     // isDev && mainWindow.webContents.openDevTools();
     return mainWindow;
