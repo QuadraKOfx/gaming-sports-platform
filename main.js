@@ -5,13 +5,14 @@ const path = require('path');
 const isDevElectron = require('electron-is-dev');
 const isDev = isDevElectron && !app.isPackaged;
 
-const version = app.getVersion();
-const platform = os.platform() + '_' + os.arch();
-
-const updaterFeedURL = 'https://legendary-platform.herokuapp.com/' + platform + '/' + version;
+const updaterFeedURL = `https://legendary-platform.herokuapp.com/update/${process.platform}/${app.getVersion()}`;
 
 function isWindowsOrMacOS() {
     return process.platform === 'darwin' || process.platform === 'win32';
+}
+
+if (require('electron-squirrel-startup')) {
+    app.quit();
 }
 
 function createWindow() {
@@ -34,6 +35,7 @@ function createWindow() {
     page.once('did-frame-finish-load', () => {
         const checkOS = isWindowsOrMacOS();
         if (checkOS && !isDev) {
+            console.info("Run in prod mode");
             appUpdater();
         }});
     // mainWindow.removeMenu(true)
