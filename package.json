@@ -6,12 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
+    "build": "electron-builder --win",
+    "dev": "webpack --config webpack.prod.js",
     "watch": "webpack --config webpack.common.js --watch",
-    "build:prod": "webpack --config webpack.prod.js",
-    "publish": "electron-builder --win -p always",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder --win",
-    "postinstall": "electron-builder install-app-deps"
+    "publish": "electron-builder --win -p always"
   },
   "repository": {
     "type": "git",
@@ -29,13 +27,12 @@
     ],
     "productName": "Legendary Arena",
     "appId": "com.quadrako.gamearena",
+    "copyright": "Copyright Legendary eSports",
     "files": [
       "build/**/*",
       "assets/**/*",
       "utils/**/*",
       "index.html",
-      "splash.html",
-      "splash.css",
       "main.js",
       "preload.js"
     ],
